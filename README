@@ -1,0 +1,3 @@
+Data structure of implemented hash tables using vectors andquadratic probing with a linear toggle. Current supported functions:
+  insert()
+  search()
