@@ -23,6 +23,7 @@ class HashTable {
 
     bool search(std::string str);
 
+    
 
     int getItemCount();
     int getTableSize();
