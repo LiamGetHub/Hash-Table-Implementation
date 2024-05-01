@@ -1,6 +1,7 @@
 #include <iostream>
 #include "cmath"
 
+#include "Item.h"
 #include "Hashtable.h"
 using namespace std;
 
