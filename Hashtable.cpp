@@ -1,5 +1,7 @@
 #include "Hashtable.h"
+#include "Item.h"
 #include "cmath"
+
 
 
 
@@ -138,8 +140,8 @@ void HashTable::rehash(){
 
 int HashTable::hashFunction(std::string str, int i) {
   // h(x)
-  return (hash(str) + (int)pow(i, 2)) % tableSize;    // quadratic probing
-  //return (hash(str) + i) % tableSize;               //linear probing
+  //return (hash(str) + (int)pow(i, 2)) % tableSize;    // quadratic probing
+  return (hash(str) + i) % tableSize;               //linear probing
   
 }
 
@@ -156,8 +158,6 @@ unsigned int HashTable::hash(std::string str) {
 
 
 
-
-
 bool HashTable::search(std::string str) {
   unsigned int hashVal = 0;
   int indexLocation;
@@ -169,8 +169,7 @@ bool HashTable::search(std::string str) {
 
   
   bool found = false;
-  std::cout << "DEBUG: index location: " << indexLocation << std::endl;
-  std::cout << "DEBUG: index table at location: " << (*table)[indexLocation] << std::endl;
+  
   
   while (found == false && (*table)[indexLocation] != "") {
     if ((*table)[indexLocation] == str) {
@@ -187,6 +186,7 @@ bool HashTable::search(std::string str) {
 
 
 
+
 //getter functions so we can publically retrive but not modify the private information
 int HashTable::getItemCount(){
   return itemCount;
@@ -197,4 +197,6 @@ int HashTable::getTableSize() {
 double HashTable::getLoadFactor() {
   return loadFactor;
 }
+
+
 
